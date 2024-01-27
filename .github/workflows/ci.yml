@@ -59,7 +59,7 @@ jobs:
           bot_id: ${{ secrets.BOT_ID }}
           bot_secret: ${{ secrets.BOT_SECRET }}
           chat_uuid: ${{ secrets.CHAT_UUID }}
-          bot_message: Sphinx Bot Github Action successfully ran! Commit ${{ github.ref }}
+          bot_message: Sphinx Bot Github Action successfully ran! Commit https://github.com/stakwork/sphinx-bot-ga/commit/${{ github.sha }}
 
       - name: Print Output
         id: output
