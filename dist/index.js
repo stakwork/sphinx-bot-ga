@@ -24706,7 +24706,7 @@ exports["default"] = _default;
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const core = __nccwpck_require__(2186)
-const { http_client } = __nccwpck_require__(6255)
+const HttpClient = (__nccwpck_require__(6255).HttpClient)
 
 /**
  * The main function for the action.
@@ -24731,7 +24731,7 @@ async function run() {
       content: bot_message
     }
 
-    const httpClient = new http_client.HttpClient('sphinx-bot', [], {
+    const httpClient = new HttpClient('sphinx-bot', [], {
       allowRetries: true,
       maxRetries: 3
     })

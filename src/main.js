@@ -1,5 +1,5 @@
 const core = require('@actions/core')
-const { http_client } = require('@actions/http-client')
+const HttpClient = require('@actions/http-client').HttpClient
 
 /**
  * The main function for the action.
@@ -24,7 +24,7 @@ async function run() {
       content: bot_message
     }
 
-    const httpClient = new http_client.HttpClient('sphinx-bot', [], {
+    const httpClient = new HttpClient('sphinx-bot', [], {
       allowRetries: true,
       maxRetries: 3
     })
