@@ -2751,10 +2751,14 @@ async function run() {
       content: bot_message
     }
 
-    const restRes = await http_client.postJson(tribe_url, req_params)
+    const httpClient = new http_client.HttpClient('sphinx-bot', [], {
+      allowRetries: true,
+      maxRetries: 3
+    })
+    const response = await httpClient.postJson(tribe_url, req_params)
 
     // Set outputs for other workflow steps to use
-    core.setOutput('response', restRes.result.json)
+    core.setOutput('response', response.result.json)
   } catch (error) {
     // Fail the workflow run if an error occurs
     core.setFailed(error.message)
