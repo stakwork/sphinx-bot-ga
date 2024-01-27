@@ -2726,7 +2726,7 @@ exports["default"] = _default;
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const core = __nccwpck_require__(186)
-const { wait } = __nccwpck_require__(312)
+const { http_client } = __nccwpck_require__(255)
 
 /**
  * The main function for the action.
@@ -2734,18 +2734,27 @@ const { wait } = __nccwpck_require__(312)
  */
 async function run() {
   try {
-    const ms = core.getInput('milliseconds', { required: true })
+    const tribe_url = core.getInput('tribe_url', { required: true })
+    const bot_id = core.getInput('bot_id', { required: true })
+    const bot_secret = core.getInput('bot_secret', { required: true })
+    const chat_uuid = core.getInput('chat_uuid', { required: true })
+    const bot_message = core.getInput('bot_message', { required: true })
 
     // Debug logs are only output if the `ACTIONS_STEP_DEBUG` secret is true
-    core.debug(`Waiting ${ms} milliseconds ...`)
+    core.debug(`Posting to ${tribe_url} ...`)
 
-    // Log the current timestamp, wait, then log the new timestamp
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+    const req_params = {
+      action: 'broadcast',
+      bot_id,
+      bot_secret,
+      chat_uuid,
+      content: bot_message
+    }
+
+    const restRes = await http_client.postJson(tribe_url, req_params)
 
     // Set outputs for other workflow steps to use
-    core.setOutput('time', new Date().toTimeString())
+    core.setOutput('response', restRes.result.json)
   } catch (error) {
     // Fail the workflow run if an error occurs
     core.setFailed(error.message)
@@ -2755,30 +2764,6 @@ async function run() {
 module.exports = {
   run
 }
-
-
-/***/ }),
-
-/***/ 312:
-/***/ ((module) => {
-
-/**
- * Wait for a number of milliseconds.
- *
- * @param {number} milliseconds The number of milliseconds to wait.
- * @returns {Promise<string>} Resolves with 'done!' after the wait is over.
- */
-async function wait(milliseconds) {
-  return new Promise(resolve => {
-    if (isNaN(milliseconds)) {
-      throw new Error('milliseconds not a number')
-    }
-
-    setTimeout(() => resolve('done!'), milliseconds)
-  })
-}
-
-module.exports = { wait }
 
 
 /***/ }),
