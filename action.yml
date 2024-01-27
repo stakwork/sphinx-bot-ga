@@ -1,18 +1,29 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Sphixn Bot'
+description: 'Sphinx Bot Github Action'
+author: 'Stakwork & Sphinx'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  tribe_url:
+    description: 'URL of the tribe you want to post to'
     required: true
-    default: '1000'
+  bot_id:
+    description: 'BOT ID of the tribe you want to post to'
+    required: true
+  bot_secret:
+    description: 'BOT Secret of the tribe you want to post to'
+    required: true
+  chat_uuid:
+    description: 'Chat UUID of the tribe you want to post to'
+    required: true
+  bot_message:
+    description: 'Message to post'
+    required: true
 
 # Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  response:
+    description: 'Response from the bot'
 
 runs:
   using: node20
