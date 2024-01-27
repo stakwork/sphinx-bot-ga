@@ -55,7 +55,11 @@ jobs:
         id: test-action
         uses: ./
         with:
-          milliseconds: 1000
+          tribe_url: ${{ secrets.TRIBE_URL }}
+          bot_id: ${{ secrets.BOT_ID }}
+          bot_secret: ${{ secrets.BOT_SECRET }}
+          chat_uuid: ${{ secrets.CHAT_UUID }}
+          bot_message: Github Action ready to go!
 
       - name: Print Output
         id: output
