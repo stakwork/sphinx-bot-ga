@@ -18,9 +18,9 @@ async function run() {
 
     const req_params = {
       action: 'broadcast',
-      bot_id: bot_id,
-      bot_secret: bot_secret,
-      chat_uuid: chat_uuid,
+      bot_id,
+      bot_secret,
+      chat_uuid,
       content: bot_message
     }
 

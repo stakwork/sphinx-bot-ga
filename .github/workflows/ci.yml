@@ -59,7 +59,7 @@ jobs:
           bot_id: ${{ secrets.BOT_ID }}
           bot_secret: ${{ secrets.BOT_SECRET }}
           chat_uuid: ${{ secrets.CHAT_UUID }}
-          bot_message: Github Action ready to go!
+          bot_message: Sphinx Bot Github Action successfully ran! Commit ${{ github.ref }}
 
       - name: Print Output
         id: output
