@@ -1,5 +1,5 @@
-name: 'Sphixn Bot'
-description: 'Sphinx Bot Github Action'
+name: 'Sphinx Bot'
+description: 'Sphinx Bot Github Action to send messages to previously created bots in the Sphinx platform.'
 author: 'Stakwork & Sphinx'
 
 branding:
