@@ -2,6 +2,10 @@ name: 'Sphixn Bot'
 description: 'Sphinx Bot Github Action'
 author: 'Stakwork & Sphinx'
 
+branding:
+  icon: message-square
+  color: blue
+
 # Define your inputs here.
 inputs:
   tribe_url:
