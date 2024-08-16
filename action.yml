@@ -27,7 +27,7 @@ inputs:
 # Define your outputs here.
 outputs:
   message: 
-    descriptipon: 'Response from the bot'
+    description: 'Response from the bot'
   success: 
     description: 'If the call was successful or not'
 
