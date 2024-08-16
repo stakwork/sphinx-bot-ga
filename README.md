@@ -23,6 +23,7 @@
 **Required** Message to send to the Bot
 
 ## Outputs
+
 JSON response from the Bot
 
 ## Example usage

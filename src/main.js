@@ -30,6 +30,8 @@ async function run() {
     })
     const response = await httpClient.postJson(tribe_url, req_params)
 
+    core.debug(`Response: ${response.result.json}`)
+
     // Set outputs for other workflow steps to use
     core.setOutput('message', response.result.json.message)
     core.setOutput('success', response.result.json.success)
