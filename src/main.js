@@ -20,7 +20,7 @@ async function run() {
       action: 'broadcast',
       bot_id,
       bot_secret,
-      chat_uuid,
+      chat_pubkey: chat_uuid,
       content: bot_message
     }
 

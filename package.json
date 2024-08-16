@@ -1,8 +1,8 @@
 {
   "name": "javascript-action",
-  "description": "GitHub Actions JavaScript Template",
-  "version": "0.0.0",
-  "author": "",
+  "description": "GitHub Actions for Sphinx Bot v2",
+  "version": "0.2.0",
+  "author": "Stakwork",
   "private": true,
   "homepage": "https://github.com/actions/javascript-action#readme",
   "repository": {
