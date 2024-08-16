@@ -3,18 +3,23 @@
 ## Inputs
 
 ### `tribe_url`
+
 **Required** URL of your Tribe.
 
 ### `bot_id`
+
 **Required** ID of your BOT
 
 ### `bot_secret`
+
 **Required** BOT Secret
 
 ### `chat_uuid`
+
 **Required** CHAT_UUID
 
 ### `bot_message`
+
 **Required** Message to send to the Bot
 
 ## Outputs
