@@ -31,7 +31,8 @@ async function run() {
     const response = await httpClient.postJson(tribe_url, req_params)
 
     // Set outputs for other workflow steps to use
-    core.setOutput('response', response.result.json)
+    core.setOutput('message', response.result.json.message)
+    core.setOutput('success', response.result.json.success)
   } catch (error) {
     // Fail the workflow run if an error occurs
     core.setFailed(error.message)

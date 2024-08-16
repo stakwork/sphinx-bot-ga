@@ -26,8 +26,8 @@ inputs:
 
 # Define your outputs here.
 outputs:
-  response:
-    description: 'Response from the bot'
+  message: 'Response from the bot'
+  success: true
 
 runs:
   using: node20
